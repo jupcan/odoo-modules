@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- PARTE 1: SECCIÓN CON LAS VISTAS -->
+
+		<!-- Declaración del formulario -->
+		<record model="ir.ui.view" id="curso_form">
+			<field name="name">res.curso.form</field>
+			<field name="model">res.curso</field>
+			<field name="arch" type="xml">
+				<form string="Cursos">
+					<div>
+						<label for="nombre" string="Nombre"/>
+						<field name="nombre"/>
+					</div>
+					<div>
+						<label for="edicion" string="Ediciones"/>
+						<field name="edicion"/>
+					</div>
+				</form>
+			</field>
+		</record>
+		<!-- Declaración de la vista de árbol-->
+		<record model="ir.ui.view" id="curso_tree">
+			<field name="name">res.curso.tree</field>
+			<field name="model">res.curso</field>
+			<field name="arch" type="xml">
+				<tree string="Cursos">
+					<field name="nombre"/>
+					<field name="edicion"/>
+				</tree>
+			</field>
+		</record>
+		<!-- FIN PARTE 1 -->
+
+		<!-- PARTE 2: ACCIONES -->
+		<record model="ir.actions.act_window" id="action_curso">
+			<field name="name">Cursos</field>
+			<field name="res_model">res.curso</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<!-- FIN PARTE 2 -->
+
+		<!-- PARTE 3: MENÚ -->
+		<menuitem id="menu_cursos_main" name="Cursos"/>
+		<menuitem id="menu_cursos_gestion" parent="menu_cursos_main" name="Gestionar cursos"/>
+		<menuitem id="menu_cursoss_perfiles" parent="menu_cursos_gestion" name="Lista de cursos" action="action_curso"/>
+		<!-- FIN PARTE 3 -->
+
+	</data>
+</openerp>

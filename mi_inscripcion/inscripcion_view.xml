@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="view_inscripcion_tree">
+            <field name="name">Arbol_Inscripciones</field>
+            <field name="model">academy.inscripcion</field>
+			<field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Inscripciones">
+                    <field name="alumno"/>
+                    <field name="edicion"/>
+					<field name="estado"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_course_form">
+            <field name="name">Formulario_Inscripciones</field>
+            <field name="model">academy.inscripcion</field>
+            <field name="arch" type="xml">
+                <form string="Inscripcion">
+                    <group col="2">
+					<field name= "alumno"/>
+					<field name= "edicion"/>
+					<field name= "estado"/>
+					</group>
+                </form>
+            </field>
+        </record>
+       
+        <record model="ir.actions.act_window" id="action_inscripcion">
+            <field name="name">Inscripciones</field>
+            <field name="res_model">academy.inscripcion</field>
+            <field name="view_type">form</field>
+			<!--<field name="context">('active_test':False)</field>-->
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem string="Inscripciones" id="menu_inscripciones" parent="base.menu_product" action="action_inscripcion"/>
+
+	</data>
+</openerp>
