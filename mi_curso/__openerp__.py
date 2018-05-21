@@ -4,7 +4,7 @@
     "version" : "1.0",
     "author" : "Juan Perea Campos & Felipe Lozano Romero",
     "category" : "Generic Modules/Others",
-    "website" : "https://github.com/jupcan",
+    "website" : "https://github.com/jupcan/odoo_modules",
     "description": "módulo para la gestión de cursos",
     "depends" : ["base"],
     "update_xml" : ["cursos_view.xml"],
